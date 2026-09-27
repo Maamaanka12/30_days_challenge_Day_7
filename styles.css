@@ -1,0 +1,120 @@
+/* Brookfield School, flat editorial theme. Solid colors only. */
+:root{
+  --paper:#F6F1E7;
+  --card:#FFFDF8;
+  --ink:#1C2420;
+  --muted:#4B5751;
+  --line:#DED3BC;
+  --green:#234E35;
+  --green-dark:#183826;
+  --ochre:#9A5B00;
+  --ochre-bg:#F1E3C4;
+  --radius:4px;
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px;
+  --space-5:48px; --space-6:64px; --space-7:96px;
+  --max:1120px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important;animation:none !important}
+}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Sans 3",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size:17px;line-height:1.6;
+  -webkit-tap-highlight-color:rgba(35,78,53,.18);
+}
+h1,h2,h3{font-family:Archivo,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.15;letter-spacing:-.01em;text-wrap:balance;margin:0 0 var(--space-2)}
+h1{font-size:clamp(2.2rem,4.5vw,3.4rem)}
+h2{font-size:clamp(1.5rem,2.6vw,2rem)}
+h3{font-size:1.15rem}
+p{margin:0 0 var(--space-2)}
+a{color:var(--green);text-underline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--space-3)}
+.skip{position:absolute;left:-9999px;top:0;background:var(--green);color:#fff;padding:10px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.site-header{border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:20}
+.header-inner{display:flex;align-items:center;gap:var(--space-3);padding:14px 24px;max-width:var(--max);margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:800;font-family:Archivo,sans-serif}
+.brand-mark{width:36px;height:36px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800;border-radius:var(--radius);font-size:18px}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{text-decoration:none;color:var(--ink);padding:8px 12px;border-radius:var(--radius);font-weight:600}
+.nav a:hover{background:#EFE7D3;text-decoration:underline}
+.nav a:focus-visible,.btn:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+.menu-btn{display:none;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:8px 12px;font:inherit;font-weight:700;touch-action:manipulation}
+.hero{border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-5);padding:var(--space-6) 0;align-items:center}
+.eyebrow{font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);margin:0 0 12px}
+.hero p.lede{font-size:1.2rem;color:var(--muted);max-width:34rem}
+.hero-actions{display:flex;gap:12px;margin-top:var(--space-3);flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:var(--radius);border:1px solid var(--green);touch-action:manipulation}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-ghost{background:transparent;color:var(--green)}
+.btn-ghost:hover{background:#EAE2CE}
+.hero-meta{margin-top:var(--space-3);font-size:.95rem;color:var(--muted)}
+.hero figure{margin:0;border:1px solid var(--line);background:var(--card);border-radius:var(--radius);overflow:hidden}
+.hero img{display:block;width:100%;height:auto}
+.photo-pair figure{margin:0;border:1px solid var(--line);background:var(--card);border-radius:var(--radius);overflow:hidden}
+.photo-pair img{display:block;width:100%;height:260px;object-fit:cover}
+figcaption{font-size:.85rem;color:var(--muted);padding:10px 14px;border-top:1px solid var(--line)}
+.stats{border-bottom:1px solid var(--line);background:var(--card)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{padding:var(--space-3);border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font-size:1.7rem;font-variant-numeric:tabular-nums;font-family:Archivo,sans-serif}
+.stat span{color:var(--muted);font-size:.95rem}
+section.block{padding:var(--space-6) 0;border-bottom:1px solid var(--line)}
+.kicker{color:var(--ochre);font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--space-3)}
+.card h3{margin-bottom:8px}
+.numlist{margin:0;padding:0;list-style:none;counter-reset:n}
+.numlist li{counter-increment:n;display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.numlist li:first-child{border-top:0}
+.numlist li::before{content:counter(n,decimal-leading-zero);font-weight:800;color:var(--green);font-variant-numeric:tabular-nums}
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:var(--space-3) 0}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer;touch-action:manipulation}
+.chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.course-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2)}
+.course{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--space-3)}
+.course .tag{display:inline-block;font-size:.78rem;font-weight:700;background:var(--ochre-bg);color:#5F3D00;padding:3px 8px;border-radius:var(--radius);margin-bottom:8px}
+.course dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.92rem;margin:12px 0 0}
+.course dt{color:var(--muted)} .course dd{margin:0;font-variant-numeric:tabular-nums}
+.teacher-tools{display:flex;gap:12px;margin:var(--space-3) 0;flex-wrap:wrap}
+.teacher-tools input,.teacher-tools select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;min-width:220px}
+.teacher-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2)}
+.teacher{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--space-2)}
+.teacher h3{margin:8px 0 2px;font-size:1rem}
+.teacher p{font-size:.9rem;color:var(--muted);margin:0 0 4px}
+.teacher .role{font-weight:700;color:var(--green);font-size:.85rem}
+.timetable{width:100%;border-collapse:collapse;background:var(--card);font-size:.95rem}
+.timetable caption{text-align:left;font-weight:700;padding-bottom:8px}
+.timetable th,.timetable td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+.timetable th{background:#EFE7D3}
+.timetable td{font-variant-numeric:tabular-nums}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+label{display:block;font-weight:700;margin:12px 0 4px}
+input[type="text"],input[type="email"],input[type="tel"],input[type="number"],select,textarea{font:inherit;padding:10px 12px;border:1px solid #B9AC8F;border-radius:var(--radius);background:#fff;width:100%}
+input::placeholder{color:#8A877F}
+.field-err{color:#8C1D18;font-size:.9rem;min-height:1.2em;margin:4px 0 0}
+.notice{border-left:4px solid var(--green);background:#E9EFE7;padding:12px 16px;border-radius:0 var(--radius) var(--radius) 0}
+.legal{font-size:.95rem;color:#333}
+footer{background:var(--green-dark);color:#EDE7D6;padding:var(--space-5) 0}
+footer a{color:#F1E3C4}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-4)}
+.status{font-variant-numeric:tabular-nums}
+@media (max-width:900px){
+  .hero-grid,.two-col,.demo-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0}
+  .teacher-grid{grid-template-columns:1fr 1fr}
+  .course-grid{grid-template-columns:1fr}
+  .nav{display:none;flex-direction:column;position:absolute;top:64px;right:12px;background:var(--card);border:1px solid var(--line);padding:8px;border-radius:var(--radius)}
+  .nav.open{display:flex}
+  .menu-btn{display:block}
+  .foot-grid{grid-template-columns:1fr}
+}
